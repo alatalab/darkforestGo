@@ -39,6 +39,7 @@ luarocks install class
 luarocks install image
 luarocks install tds
 luarocks install cudnn
+luarocks install cutorch
 ```
  This program supports 1 to 4 GPUs.
 
@@ -48,28 +49,8 @@ Then just compile with the following command:
 sh ./compile.sh
 ```
 
-GCC 4.8+ is required. Depending on the location of your C++ compiler, please change the script accordingly. 
-Tested in CentOS 6.5 and Ubuntu 14.04, 15.04.
-
-
-Install gcc-4.9 as a second compiler and create symlink as:
-
-    sudo ln -s /usr/bin/gcc-4.9 /usr/local/cuda/bin/gcc 
-    sudo ln -s /usr/bin/g++-4.9 /usr/local/cuda/bin/g++
-During the installation of torch and cudnn, either change the build script or replace symlink at /usr/bin/cc with:
-   
-    sudo ln -s /usr/bin/gcc-4.9 /usr/bin/cc
-
-More info at (http://stackoverflow.com/questions/6622454/cuda-incompatible-with-my-gcc-version)
-
-
-After the compilation `cc` symlink can be reverted back to latest version.
-
-If you get errors like:
-
-    These bindings are for version 5005 or above ...
-
-Download latest cuDNN from nvidia at (https://developer.nvidia.com/rdp/cudnn-download), registration required.
+For  Ubuntu 16.04. - 
+Download latest Nvidia CUDA and CuDNN software which support gcc >5 compiler.
 
 
 
